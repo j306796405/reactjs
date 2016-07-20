@@ -14,7 +14,7 @@ function baseConfig(config, contentBase) {
   return new webpackDevServer(webpack(config), {
     historyApiFallback: true,
     hot: true,
-    // inline: true,
+    inline: true,
     progress: true,
     contentBase: contentBase,
     stats: { colors: true } // 用颜色标识
