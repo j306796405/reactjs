@@ -1,9 +1,3 @@
-/**
- * FileName TodoHeader
- * Date 2016-07-20
- * Created by jianglinj
- */
-'user strict'
 import React from 'react';
 
 class TodoHeader extends React.Component {
@@ -28,7 +22,7 @@ class TodoHeader extends React.Component {
   render() {
     return (
       <div className="panel-header">
-        <input type="text" onKeyUp={this.handlerKeyUp.bind(this)} placeholder="what's your task ？"/>
+        <input type="text" onKeyUp={this.handlerKeyUp.bind(this)} placeholder="what's your task？"/>
       </div>
     )
   }

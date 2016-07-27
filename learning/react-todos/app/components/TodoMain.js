@@ -1,9 +1,3 @@
-/**
- * FileName TodoMain
- * Date 2016-07-20
- * Created by jianglinj
- */
-'use strict'
 import React from 'react';
 import TodoItem from './TodoItem';
 

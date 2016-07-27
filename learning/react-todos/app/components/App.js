@@ -1,9 +1,3 @@
-/**
- * FileName App
- * Date 2016-07-20
- * Created by jianglinj
- */
-'user strict'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import LocalDb from "localDb";

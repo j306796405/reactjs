@@ -1,0 +1,8 @@
+创建action,reduce文件
+
+通过store.dispatch(addTodo('Learn about actions')) 调用对应的action方法 激活对应的reduce
+
+store可以绑定事件
+let unsubscribe = store.subscribe(() =>
+    console.log(store.getState())
+)

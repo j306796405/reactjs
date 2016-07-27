@@ -4,10 +4,10 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-  devtool: "source-map", // or "inline-source-map"
   entry: [
-    'webpack/hot/dev-server',
+    // 'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
     path.resolve(__dirname, 'app/components/App.js')       // 定义入口文件
   ],
   output: {                                       // 定义出口目录
@@ -21,9 +21,10 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.js|jsx$/, // 检测哪些文件需要此loader，是一个正则表达式，用正则来匹配文件路径，这段意思是匹配 js 或者 jsx
+        test: /\.jsx?$/, // 检测哪些文件需要此loader，是一个正则表达式，用正则来匹配文件路径，这段意思是匹配 js 或者 jsx
         exclude: /(node_modules|bower_components)/,
-        loaders: ['babel']  // 加载模块 "babel" 是 "babel-loader" 的缩写
+        loaders: ['react-hot', 'babel'], // 加载模块 "babel" 是 "babel-loader" 的缩写
+        include: path.join(__dirname, 'app')
       },
       {
         test: /(\.css|\.scss)$/,
