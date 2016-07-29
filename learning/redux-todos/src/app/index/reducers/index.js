@@ -7,5 +7,12 @@
 
 import { combineReducers } from 'redux';
 import list from './list';
+import filter from './filter';
 
-export default combineReducers({ list })
+/**
+ * 对外公开reducer对象
+ * {
+ *      list: list
+ * }
+*/
+export default combineReducers({ list, filter })

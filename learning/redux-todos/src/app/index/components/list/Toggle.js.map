@@ -1,0 +1,1 @@
+{"version":3,"sources":["Toggle.jsx"],"names":[],"mappings":";;;;;;AAAA;;;;;;;;;;;;IAEqB,M;;;;;;;;;;;;kBAAA,M","file":"Toggle.js","sourcesContent":["import React, { Component } from 'react';\r\n\r\nexport default class Toggle extends Component{\r\n    \r\n}"]}

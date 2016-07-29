@@ -1,12 +1,7 @@
-/**
- * FileName index.js
- * Date 2016-07-28
- * Created by jianglinj
- */
-'use strict'
-
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from '../../actions/category.js';
 
 export default class Category extends Component {
     render () {
@@ -17,3 +12,8 @@ export default class Category extends Component {
         );
     }
 }
+
+let mapStateToProps = state => ({category: state.category});
+let mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Category);
