@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;AAKA;;;;;;AAEA;;AACA;;;;;;kBAEe,4BAAgB,EAAC,oBAAD,EAAhB,C","file":"index-compiled.js","sourcesContent":["/**\n * FileName index\n * Date 2016-08-01\n * Created by jianglinj\n */\n'use strict'\n\nimport {combineReducers} from 'redux';\nimport list from './list';\n\nexport default combineReducers({list});\n"]}
