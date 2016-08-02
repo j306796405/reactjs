@@ -8,7 +8,7 @@ const config = {
     // 'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    path.resolve(__dirname, 'app/index.js')       // 定义入口文件
+    path.resolve(__dirname, 'src/app/index.js')       // 定义入口文件
   ],
   output: {                                       // 定义出口目录
     path: path.resolve(__dirname, 'build'),
@@ -24,7 +24,7 @@ const config = {
         test: /\.jsx?$/, // 检测哪些文件需要此loader，是一个正则表达式，用正则来匹配文件路径，这段意思是匹配 js 或者 jsx
         exclude: /(node_modules|bower_components)/,
         loaders: ['react-hot', 'babel'], // 加载模块 "babel" 是 "babel-loader" 的缩写
-        include: path.join(__dirname, 'app')
+        include: path.join(__dirname, 'src')
       },
       {
         test: /(\.css|\.scss)$/,
@@ -41,7 +41,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'app/index.tpl.html',
+      template: 'src/app/index.tpl.html',
       inject: 'body',
       filename: 'index.html'
     }),

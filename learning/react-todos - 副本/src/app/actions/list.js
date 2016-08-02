@@ -13,10 +13,10 @@ export function addItem(text){
   }
 }
 
-export function updateItem(data){
+export function updateItemStatus(status){
   return {
-    type: types.UPDATE_ITEM,
-    data
+    type: types.UPDATE_ITEM_STATUS,
+    status
   }
 }
 
@@ -27,10 +27,10 @@ export function deleteItem(id){
   }
 }
 
-export function updateItems(data){
+export function updateItemsStatus(status){
   return {
-    type: types.UPDATE_ITEMS,
-    data
+    type: types.UPDATE_ITEMS_STATUS,
+    status
   }
 }
 

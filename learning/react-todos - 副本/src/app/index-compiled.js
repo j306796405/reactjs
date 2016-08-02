@@ -16,6 +16,8 @@ var _Root = require('./containers/Root');
 
 var _Root2 = _interopRequireDefault(_Root);
 
+require('./../css/base.css');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var store = (0, _store2.default)();
