@@ -11,7 +11,7 @@ export default class Toggle extends React.Component{
     let {updateItemsStatus} = this.props;
     let isChecked = e.target.checked;
 
-    updateItemsStatus(isChecked);
+    updateItemsStatus({status: isChecked});
   }
 
   render () {

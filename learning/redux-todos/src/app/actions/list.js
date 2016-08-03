@@ -4,25 +4,25 @@
  * Created by jianglinj
  */
 'use strict'
-import * as types from './../constants/ActionTypes';
+import * as types from './../constants/ActionTypes';  
 
 export function addItem(text){
   return {
     type: types.ADD_ITEM,
-    text
+    text 
   }
 }
 
 export function updateItemStatus(status){
   return {
     type: types.UPDATE_ITEM_STATUS,
-    status
+    ...status
   }
 }
 
 export function deleteItem(id){
   return {
-    type: types.DELETE_ITEM,
+    type: types.DELETE_ITEM, 
     id
   }
 }
@@ -30,7 +30,7 @@ export function deleteItem(id){
 export function updateItemsStatus(status){
   return {
     type: types.UPDATE_ITEMS_STATUS,
-    status
+    ...status
   }
 }
 
@@ -42,10 +42,9 @@ export function deleteItems(query){
   }
 }
 
-//status?
-export function filterItems(status){
+export function filterItems(active){
   return {
     type: types.FILTER_ITEMS,
-    status
+    ...active
   }
 }

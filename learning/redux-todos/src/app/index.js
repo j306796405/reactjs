@@ -8,7 +8,7 @@ import './../css/base.css';
 let store = createStore();
 
 ReactDOM.render(
-  <Root store={store}  />,
+  <Root store={store} />,
   document.getElementById('app')
 );
 

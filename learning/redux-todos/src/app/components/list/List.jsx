@@ -4,12 +4,20 @@ import Todo from './Todo';
 
 export default class List extends React.Component {
   render() {
-    let {deleteItem, updateItemStatus} = this.props;
+    let {deleteItem, updateItemStatus, filter} = this.props;
+    let filterTodos = this.props.list; 
+
+    if(!filter.active){
+      filterTodos = filterTodos.filter(todo => {
+        return todo.status === true;
+      })
+    }
 
     return (
+
       <ul className="todo-list">
-        { 
-          this.props.list.map(todo => {
+        {
+          filterTodos.map(todo => {
             return <Todo
               key={todo.id}
               deleteItem={() => deleteItem(todo.id)}
@@ -17,7 +25,7 @@ export default class List extends React.Component {
               {...todo}
             />
           })
-        } 
+        }
       </ul>
     )
   }

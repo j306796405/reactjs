@@ -35,18 +35,18 @@ var deleteItem = function deleteItem(state, id) {
   });
 };
 
-var updateItemStatus = function updateItemStatus(state, data) {
+var updateItemStatus = function updateItemStatus(state, action) {
   return state.map(function (todo) {
-    if (todo.id === data.id) {
-      todo.status = data.status;
+    if (todo.id === action.id) {
+      todo.status = action.status;
     }
     return todo;
   });
 };
 
-var updateItemsStatus = function updateItemsStatus(state, status) {
+var updateItemsStatus = function updateItemsStatus(state, ation) {
   return state.map(function (todo) {
-    todo.status = status;
+    todo.status = ation.status;
     return todo;
   });
 };
@@ -63,10 +63,10 @@ exports.default = function () {
       return deleteItem(state, action.id);
 
     case types.UPDATE_ITEM_STATUS:
-      return updateItemStatus(state, action.data);
+      return updateItemStatus(state, action);
 
     case types.UPDATE_ITEMS_STATUS:
-      return updateItemsStatus(state, action.status);
+      return updateItemsStatus(state, action);
 
     default:
       return state;

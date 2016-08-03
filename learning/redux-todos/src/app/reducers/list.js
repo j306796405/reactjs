@@ -25,18 +25,18 @@ let deleteItem = (state, id) => {
   })
 }
 
-let updateItemStatus = (state, data) => {
+let updateItemStatus = (state, action) => {
   return state.map(todo => {
-    if(todo.id === data.id){
-      todo.status = data.status;
+    if(todo.id === action.id){
+      todo.status = action.status;
     }
     return todo;
   })
 }
 
-let updateItemsStatus = (state, status) => {
+let updateItemsStatus = (state, ation) => {
   return state.map(todo => {
-    todo.status = status;
+    todo.status = ation.status;
     return todo;
   })
 }
@@ -50,10 +50,10 @@ export default (state = [], action) => {
       return deleteItem(state, action.id);
 
     case types.UPDATE_ITEM_STATUS:
-      return updateItemStatus(state, action.data);
+      return updateItemStatus(state, action);
 
     case types.UPDATE_ITEMS_STATUS:
-      return updateItemsStatus(state, action.status);
+      return updateItemsStatus(state, action);
 
     default:
       return state

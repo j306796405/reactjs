@@ -8,6 +8,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 exports.addItem = addItem;
 exports.updateItemStatus = updateItemStatus;
 exports.deleteItem = deleteItem;
@@ -29,10 +32,9 @@ function addItem(text) {
 }
 
 function updateItemStatus(status) {
-  return {
-    type: types.UPDATE_ITEM_STATUS,
-    status: status
-  };
+  return _extends({
+    type: types.UPDATE_ITEM_STATUS
+  }, status);
 }
 
 function deleteItem(id) {
@@ -43,10 +45,9 @@ function deleteItem(id) {
 }
 
 function updateItemsStatus(status) {
-  return {
-    type: types.UPDATE_ITEMS_STATUS,
-    status: status
-  };
+  return _extends({
+    type: types.UPDATE_ITEMS_STATUS
+  }, status);
 }
 
 //query?
@@ -57,12 +58,10 @@ function deleteItems(query) {
   };
 }
 
-//status?
-function filterItems(status) {
-  return {
-    type: types.FILTER_ITEMS,
-    status: status
-  };
+function filterItems(active) {
+  return _extends({
+    type: types.FILTER_ITEMS
+  }, active);
 }
 
 //# sourceMappingURL=list-compiled.js.map
