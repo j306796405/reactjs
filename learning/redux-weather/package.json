@@ -34,6 +34,7 @@
     "eslint-plugin-react": "^5.2.2",
     "eslint-watch": "^2.1.13",
     "file-loader": "^0.9.0",
+    "framework7": "^1.4.2",
     "history": "^1.13.0",
     "html-webpack-plugin": "^2.22.0",
     "image-webpack-loader": "^1.8.0",

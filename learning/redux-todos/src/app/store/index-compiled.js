@@ -15,7 +15,15 @@ var _index = require('./../reducers/index');
 
 var _index2 = _interopRequireDefault(_index);
 
+var _reduxDevtools = require('redux-devtools');
+
+var _DevTools = require('./../tools/DevTools');
+
+var _DevTools2 = _interopRequireDefault(_DevTools);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var enhancer = (0, _redux.compose)(_DevTools2.default.instrument(), (0, _reduxDevtools.persistState)(window.location.href.match(/[?&]debug_session=([^&#]+)\b/)));
 
 /**
  * reducer (Function): 接收两个参数，分别是当前的 state 树和要处理的 action，返回新的 state 树。
@@ -23,7 +31,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * */
 
 exports.default = function (initialState) {
-  return (0, _redux.createStore)(_index2.default, initialState);
+  return (0, _redux.createStore)(_index2.default, initialState, enhancer);
 };
 
 //# sourceMappingURL=index-compiled.js.map
