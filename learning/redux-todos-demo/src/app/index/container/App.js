@@ -12,6 +12,7 @@ import Index from '../components/index.jsx';
 
 export default class View extends Component{
     render () {
+
         return (
             <Router history={createHistory()}>
                 <Route path="/" component={ Index }></Route>
