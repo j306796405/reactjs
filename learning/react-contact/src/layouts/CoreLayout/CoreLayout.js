@@ -7,7 +7,7 @@ export const CoreLayout = ({children}) => (
   <div className="c-wrap">
     <div className="views">
       <div className="view view-main">
-        {children} 
+        {children}
       </div>
     </div>
     <div className="popup">
@@ -15,7 +15,7 @@ export const CoreLayout = ({children}) => (
     </div>
   </div>
 )
-
+ 
 CoreLayout.propTypes = {
   children: React.PropTypes.element.isRequired
 }

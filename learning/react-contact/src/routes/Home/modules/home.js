@@ -20,23 +20,27 @@ export function requestTasks () {
   }
 }
 
-export function receiveTasks (tasks) {
+export function receiveTasks (datas) {
   return {
     type: RECEIVE_TASKS,
     payload: {
-      ...tasks
+      datas
     }
   }
 }
 
 export function fetchTasks(){
   return (dispatch, getState) => {
-    if (getState().zen.fetching) return
+    if (getState().tasks.fetching) return
 
-    dispatch(requestZen())
+    dispatch(requestTasks())
     return fetch('http://localhost:8000/tasks')
-      .then(data => data.text())
-      .then(text => dispatch(receiveZen(text)))
+      .then(data => {
+        return data.json();
+      })
+      .then(text => {
+        dispatch(receiveTasks(text))
+      })
   }
 }
 
@@ -54,7 +58,7 @@ const ACTION_HANDLERS = {
     return ({...state, fetching: true})
   },
   [RECEIVE_TASKS]: (state, action) => {
-    return ({...state, fetching: false, tasks: action.tasks})
+    return ({...state, fetching: false, ...action.payload})
   }
 }
 
@@ -63,7 +67,7 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const initialState = {
   fetching: false,
-  tasks: []
+  datas: []
 }
 export default function (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
