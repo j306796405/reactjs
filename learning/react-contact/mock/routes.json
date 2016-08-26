@@ -1,0 +1,4 @@
+{
+  "/news/:id/show": "/todos/:id",
+  "/topics/:id/show": "/todos/:id"
+}

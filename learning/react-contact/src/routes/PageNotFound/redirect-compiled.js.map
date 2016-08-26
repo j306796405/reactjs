@@ -1,0 +1,1 @@
+{"version":3,"sources":["redirect.js"],"names":[],"mappings":";;;;;kBAAe;AACb,QAAM,GADO;AAEb,cAAY;AACV,WADU,mBACD,SADC,EACU,OADV,EACmB;AAC3B,cAAQ,MAAR;AACD;AAHS;AAFC,C","file":"redirect-compiled.js","sourcesContent":["export default {\r\n  path: '*',\r\n  indexRoute: {\r\n    onEnter (nextState, replace) {\r\n      replace('/404')\r\n    }\r\n  }\r\n}\r\n"]}

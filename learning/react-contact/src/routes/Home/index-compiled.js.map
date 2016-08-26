@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;AAAA;;;;;;;kBAGe;AACb;AADa,C","file":"index-compiled.js","sourcesContent":["import HomeView from './components/HomeView'\r\n\r\n// Sync route definition\r\nexport default {\r\n  component: HomeView\r\n}\r\n"]}

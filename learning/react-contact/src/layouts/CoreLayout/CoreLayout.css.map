@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,cAAe;EACb,WAAW,EAAC,IAAI",
+"sources": ["CoreLayout.scss"],
+"names": [],
+"file": "CoreLayout.css"
+}

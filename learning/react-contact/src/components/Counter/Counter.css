@@ -1,0 +1,11 @@
+.counter {
+  font-weight: bold; }
+
+.counter--green {
+  composes: counter;
+  color: #19c819; }
+
+.counterContainer {
+  margin: 1em auto; }
+
+/*# sourceMappingURL=Counter.css.map */
