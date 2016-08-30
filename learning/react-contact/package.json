@@ -95,6 +95,7 @@
     "debug": "^2.2.0",
     "extract-text-webpack-plugin": "^1.0.0",
     "file-loader": "^0.9.0",
+    "framework7": "^1.4.2",
     "fs-extra": "^0.30.0",
     "halogen": "^0.2.0",
     "history": "^2.0.0",
