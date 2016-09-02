@@ -8,7 +8,7 @@ var WebpackConfig = require("./webpack.config.js");
 
 //dev
 gulp.task("build-dev", ["webpack:build-dev", "webpack-dev-server"], function(){
-    //gulp.watch(["src/**/*"], ["webpack:build-dev"]);
+    gulp.watch(["src/**/*"], ["webpack:build-dev"]);
 });
 
 //webpack dev server
@@ -17,7 +17,7 @@ gulp.task("webpack-dev-server", function(callback) {
     var serverConfig = Object.create(WebpackConfig);
         serverConfig.devtool = '#source-map';
         serverConfig.debug = true;
-        serverConfig.entry.app.unshift("webpack-dev-server/client?http://localhost:7777", "webpack/hot/dev-server");
+        serverConfig.entry.app.unshift("webpack-dev-server/client?http://localhost:8888", "webpack/hot/dev-server");
         serverConfig.plugins = serverConfig.plugins.concat(
             new webpack.HotModuleReplacementPlugin()
         )
@@ -35,7 +35,7 @@ gulp.task("webpack-dev-server", function(callback) {
         stats: {
             color: true
         }
-    }).listen(7777, function(err) {
+    }).listen(8888, function(err) {
         if(err) throw new gutil.PluginError("webpack-dev-server", err);
         // Server listening
         gutil.log("[webpack-dev-server]");
