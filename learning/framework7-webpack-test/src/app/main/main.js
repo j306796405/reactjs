@@ -22,6 +22,8 @@ class Main {
             var topicsTpl = Tools.renderTpl(mainTpl, res);
             $$('.topics-list ul').html('').append(topicsTpl);
         })
+        this.pullToRefresh();
+        this.loadMore();
     } 
 
     getTopics(page, callback) {
@@ -70,6 +72,41 @@ class Main {
             } 
         };    
         return data;
+    }
+
+    pullToRefresh(){
+        var ptrContent = $$('.pull-to-refresh-content'),
+            that = this;
+        ptrContent.on('refresh', function (e) {
+            that.getTopics(1, function(res){
+                res.data = that.transformData(res.data);
+                var topicsTpl = Tools.renderTpl(mainTpl, res);
+                $$('.topics-list ul').html('').append(topicsTpl);
+                myApp.pullToRefreshDone();
+            }); 
+        });  
+    }
+
+    loadMore(){
+        var loading = false,
+            that = this,
+            page = 2;
+        $$('.infinite-scroll').on('infinite', function () {
+            if (loading) return;
+            loading = true;
+            that.getTopics(page, function(res){
+                if (res.length !== 0) {
+                    ++page;
+                    res.data = that.transformData(res.data);
+                    var topicsTpl = Tools.renderTpl(mainTpl, res);
+                    $$('.media-list ul').append(topicsTpl);
+                    loading = false;
+                } else {
+                    myApp.detachInfiniteScroll($$('.infinite-scroll'));
+                    $('.infinite-scroll-preloader').remove();
+                }
+            });
+        });
     }
 }
 
