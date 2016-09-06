@@ -5,12 +5,14 @@ Template7.registerHelper('json_stringify', function (context) {
 
 // Initialize your app
 var myApp = new Framework7({
+    pushState: true,
     animateNavBackIcon: true,
     // Enable templates auto precompilation
     precompileTemplates: true,
     // Enabled pages rendering using Template7
     template7Pages: true,
     // Specify Template7 data for pages
+    swipeBackPage: false,
     template7Data: {
         // Will be applied for page with "projects.html" url
         'url:projects.html': {

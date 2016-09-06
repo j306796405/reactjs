@@ -22,9 +22,15 @@ class Main {
             var topicsTpl = Tools.renderTpl(mainTpl, res);
             $$('.topics-list ul').html('').append(topicsTpl);
         })
+        this.setAvatar(Constant.AVATAR);
         this.pullToRefresh();
         this.loadMore();
-    } 
+    }
+
+    setAvatar(pic){
+        var _avatarElm = $$('.panel-avatar img');
+        _avatarElm.attr('src', pic);
+    }
 
     getTopics(page, callback) {
         var
@@ -52,10 +58,10 @@ class Main {
             if (data[i].top) {
                 data[i].type = '置顶';
                 continue;
-            }
+            } 
             switch (data[i].tab) {
                 case 'share':
-                    data[i].type = '分享';
+                    data[i].type = '分享'; 
                     break;
                 case 'ask':
                     data[i].type = '问答';

@@ -24,7 +24,7 @@ module.exports = {
         'framework7.ios.colors.css': __f7Path + '/css/framework7.ios.colors.css'
     }
   },
-  // how modules should be transformed
+  // how modules should be transformed 
   module: {
     loaders: [
         {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')},

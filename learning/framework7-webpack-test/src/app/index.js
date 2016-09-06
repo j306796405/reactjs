@@ -7,7 +7,7 @@
 
 import 'framework7';
 // import 'framework7.material.css';
-// import 'framework7.material.color.css';
+// import 'framework7.material.colors.css';
 import 'framework7.ios.css';
 import 'framework7.ios.colors.css';
 import './../assets/css/app.less'
@@ -20,13 +20,17 @@ var app = {
         window.$$ = Dom7;
         window.myApp = new Framework7({
             // Enable Material theme
-            material: true
-        })
-        myApp.addView('.view-main', {
-            domCache: true
+            // material: true,
+            pushState: true, 
+            animateNavBackIcon: true,
+            swipeBackPage: false 
         }) 
+        myApp.addView('.view-main', {
+            dynamicNavbar: true
+        // domCache: true
+        })
 
-        mainModule.init();
+        mainModule.init(); 
         routerModule.init();
     } 
 } 

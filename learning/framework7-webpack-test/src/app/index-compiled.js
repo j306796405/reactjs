@@ -28,10 +28,14 @@ var app = {
         window.$$ = Dom7;
         window.myApp = new Framework7({
             // Enable Material theme
-            material: true
+            // material: true,
+            pushState: true,
+            animateNavBackIcon: true,
+            swipeBackPage: false
         });
         myApp.addView('.view-main', {
-            domCache: true
+            dynamicNavbar: true
+            // domCache: true
         });
 
         _main2.default.init();
@@ -39,7 +43,7 @@ var app = {
     }
 };
 // import 'framework7.material.css';
-// import 'framework7.material.color.css';
+// import 'framework7.material.colors.css';
 
 
 app.init();
