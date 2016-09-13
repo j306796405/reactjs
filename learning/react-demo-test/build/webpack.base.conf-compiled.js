@@ -1,5 +1,13 @@
+'use strict';
+
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var path = require('path'),
-  webpack = require('webpack');
+    webpack = require('webpack');
 
 var src = path.resolve(__dirname, '../src'); // 源码目录
 var commonPath = {
@@ -16,17 +24,8 @@ module.exports = {
     // ================================
     // 框架 / 类库 分离打包
     // ================================
-    vendor: [
-      'history',
-      'lodash',
-      'react',
-      'react-dom',
-      'react-redux',
-      'react-router',
-      'react-router-redux',
-      'redux',
-      'redux-thunk'
-      // 'superagent'
+    vendor: ['history', 'lodash', 'react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux', 'redux-thunk'
+    // 'superagent'
     ]
   },
   output: {
@@ -58,12 +57,9 @@ module.exports = {
     loaders: [{
       test: /\.(js|jsx)$/,
       include: src,
-      loaders: ['react-hot', 'babel?' + JSON.stringify({
+      loaders: ['react-hot', 'babel?' + (0, _stringify2.default)({
         cacheDirectory: true,
-        plugins: [
-          'transform-runtime',
-          'transform-decorators-legacy'
-        ],
+        plugins: ['transform-runtime', 'transform-decorators-legacy'],
         presets: ['es2015', 'react', 'stage-0'],
         env: {
           production: {
@@ -92,21 +88,20 @@ module.exports = {
   eslint: {
     formatter: require('eslint-friendly-formatter')
   },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'mainifest']
-    }),
-    new webpack.DefinePlugin({
-      'process.env': { // 这是给 React / Redux 打包用的
-        NODE_ENV: JSON.stringify('production')
-      },
-      // ================================
-      // 配置开发全局常量
-      // ================================
-      __DEV__: process.env.NODE_ENV.trim() === 'development',
-      __PROD__: process.env.NODE_ENV.trim() === 'production',
-      __COMPONENT_DEVTOOLS__: false, // 是否使用组件形式的 Redux DevTools 
-      __WHY_DID_YOU_UPDATE__: false // 是否检测不必要的组件重渲染
-    })
-  ]
-}; 
+  plugins: [new webpack.optimize.CommonsChunkPlugin({
+    names: ['vendor', 'mainifest']
+  }), new webpack.DefinePlugin({
+    'process.env': { // 这是给 React / Redux 打包用的
+      NODE_ENV: (0, _stringify2.default)('production')
+    },
+    // ================================
+    // 配置开发全局常量
+    // ================================
+    __DEV__: process.env.NODE_ENV.trim() === 'development',
+    __PROD__: process.env.NODE_ENV.trim() === 'production',
+    __COMPONENT_DEVTOOLS__: false, // 是否使用组件形式的 Redux DevTools
+    __WHY_DID_YOU_UPDATE__: false // 是否检测不必要的组件重渲染
+  })]
+};
+
+//# sourceMappingURL=webpack.base.conf-compiled.js.map

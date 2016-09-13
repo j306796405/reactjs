@@ -10,16 +10,18 @@ if (__DEV__ && __COMPONENT_DEVTOOLS__) {
   DevTools = require('COMPONENT/DevTools').default
 }
 
-const LayoutView = ({ children, location }) => (
-  <div>
-    <Navbar location={location} />
-  
-    <div className="container">
-      { children }
-    </div>
+const LayoutView = ({ children, location, history, params, route, routeParams }) => {
+    return (
+        <div>
+            <Navbar location={location} />
 
-    { DevTools && <DevTools /> }
-  </div>
-)
+            <div className="container">
+                { children } 
+            </div>
+
+            { DevTools && <DevTools /> }
+        </div> 
+    )
+}
 
 export default LayoutView

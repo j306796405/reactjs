@@ -1,0 +1,1 @@
+{"version":3,"sources":["BBB.js"],"names":[],"mappings":";;;;;AAKA;;AAEA;;;;;;AACA;AACA,QAAQ,GAAR","file":"BBB-compiled.js","sourcesContent":["/**\r\n * FileName BBB\r\n * Date 2016-09-09\r\n * Created by jianglinj\r\n */\r\n'use strict'\r\n\r\nimport fn_AAA, {handler} from 'AAA';\r\nfn_AAA();\r\nconsole.log(handler);"]}

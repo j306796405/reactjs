@@ -16,8 +16,8 @@ export default class MsgDetail extends Component {
 
   constructor (props, context) {
     super(props, context)
-    this.state = { msg: {} }
-  }
+    this.state = { msg: {} } 
+  } 
 
   componentWillMount() {
     // P.S: 在 Vue Demo 中，数据都是直接从后端 API 中获取
@@ -27,7 +27,7 @@ export default class MsgDetail extends Component {
 
     let msg = msgs.filter(({ id }) => id === msgId)[0]
     msg ? this.setState({ msg }) : this.fetchMsgFromAPI(msgId)
-  }
+  } 
 
   fetchMsgFromAPI (msgId) {
     msgService.fetch({ msgId }).then(msg => {
