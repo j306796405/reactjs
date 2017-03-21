@@ -31,8 +31,6 @@ class Tabs extends Component{
 
         const currProps = this.props;
 
-        this.handleTabClick = this.handleTabClick.bind(this);
-
         let activeIndex;
         if ('activeIndex' in currProps) {
             activeIndex = currProps.activeIndex;
@@ -58,6 +56,10 @@ class Tabs extends Component{
     handleTabClick(activeIndex){
         const prevIndex = this.state.activeIndex;
 
+        console.log(this);
+        setTimeout(() => {
+            console.log(this);
+        },500)
         if (prevIndex !== activeIndex &&
             'defaultActiveIndex' in this.props) {
             this.setState({
@@ -76,7 +78,7 @@ class Tabs extends Component{
             <TabNav
                 key="tabBar"
                 classPrefix={classPrefix}
-                onTabClick={this.handleTabClick}
+                onTabClick={::this.handleTabClick}
                 panels={children}
                 activeIndex={this.state.activeIndex}
             />
